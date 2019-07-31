@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block header %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/app/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>New Hashtag</h1>
+            <span class="subheading">해시태그를 추가하는 페이지 입니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        {{ error_message }}
+        <form method="POST">
+          <div style="text-align:center; margin-right: 50px;">
+            {% csrf_token %}
+            {{form.as_table}}
+          </div>
+            <table>
+            </table>
+            <input class="btn btn-dark" style="text-align:center;"  type="submit" value="제출하기">
+        </form>
+    </div>
+</div>
+{% endblock %}
